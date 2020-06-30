@@ -1,8 +1,8 @@
-# This program demonstrates a basic Ocean program that runs a QUBO problem on the D-Wave QPU. In this example we use Ocean's `EmbeddingComposite` to determine the best placement of our problem onto the physical hardware.
+# This program demonstrates a basic Ocean program that runs a QUBO problem on the D-Wave QPU as a binary quadratic model (BQM). In this example we use Ocean's `EmbeddingComposite` to determine the best placement of our problem onto the physical hardware.
 
 # Program Characteristics:
 
-# - Model: QUBO
+# - Model: BQM (from QUBO)
 # - Sampler: D-Wave QPU with EmbeddingComposite
 
 # This QUBO problem is formulated/developed here: https://docs.dwavesys.com/docs/latest/c_pf_3.html#social-networks-friends-and-enemies
@@ -14,7 +14,12 @@ from dwave.system import EmbeddingComposite, DWaveSampler
 from dimod import BinaryQuadraticModel
 
 # Now we can define our problem as a Python dictionary and convert it to a BQM.
-Q = {('B','B'): 1, ('K','K'): 1, ('A','C'): 2, ('A','K'): -2, ('B','C'): -2}
+Q = {('B','B'): 1, 
+    ('K','K'): 1, 
+    ('A','C'): 2, 
+    ('A','K'): -2, 
+    ('B','C'): -2}
+    
 bqm = BinaryQuadraticModel.from_qubo(Q)
 
 # Next we define the sampler that we want to use to run our problem.
