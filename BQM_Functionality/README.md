@@ -29,3 +29,22 @@ Optimal Solutions:
 
 - A = +1, B = -1, C = -1, K = +1; Energy: -1.5
 - A = -1, B = +1, C = +1, K = -1; Energy: -1.5
+
+## Using Offsets in a BQM
+
+The Ising and QUBO problems that we ran earlier provide the same partition of variables in both programs.  The optimal solutions in both programs partition our variables into the sets {A, K} and {B, C}.  However, the minimum energy value differs between QUBO and Ising due to constants in the problem formulations.  Within a BQM model in Ocean we can use the offset feature to add in this constant to see consistent energy values for optimal solutions between the two models.
+
+Program Characteristics:
+
+- Models: BQM (QUBO) and BQM (Ising)
+- Sampler: `DWaveSampler` with `EmbeddingComposite`
+
+Optimal QUBO Solutions:
+
+- A = 1, B = 0, C = 0, K = 1; Energy: 0.0
+- A = 0, B = 1, C = 1, K = 0; Energy: 0.0
+
+Optimal Ising Solutions:
+
+- A = +1, B = -1, C = -1, K = +1; Energy: 0.0
+- A = -1, B = +1, C = +1, K = -1; Energy: 0.0
