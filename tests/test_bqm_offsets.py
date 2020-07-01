@@ -27,3 +27,4 @@ class TestDemo(unittest.TestCase):
         demo_file = os.path.join(project_dir, 'BQM_Functionality/bqm_offsets.py')
         print(demo_file)
         subprocess.check_output([sys.executable, demo_file])
+        
