@@ -1,10 +1,14 @@
 # Basic Ocean Programs
 
-This folder contains examples of basic Ocean programs written for problems formulated as either a QUBO or Ising model.
+This folder contains examples of basic Ocean programs written for problems
+formulated as either a QUBO or Ising model.
 
 ## Basic QUBO Program
 
-The file `general_program_qubo.py` provides a basic Ocean program that runs a QUBO problem on the D-Wave QPU. In this example we use Ocean's `EmbeddingComposite` to determine the best placement of our problem onto the physical hardware.
+The file `general_program_qubo.py` provides a basic Ocean program that runs a
+QUBO problem on the D-Wave QPU. In this example we use Ocean's
+`EmbeddingComposite` to determine the best placement of our problem onto the
+physical hardware.
 
 Program Characteristics:
 
@@ -18,7 +22,10 @@ Optimal Solutions:
 
 ## Basic Ising Program
 
-The file `general_program_ising.py` provides a basic Ocean program that runs an Ising version of the QUBO problem on the D-Wave QPU. In this example we use Ocean's `EmbeddingComposite` to determine the best placement of our problem onto the physical hardware.
+The file `general_program_ising.py` provides a basic Ocean program that runs an
+Ising version of the QUBO problem on the D-Wave QPU. In this example we use
+Ocean's `EmbeddingComposite` to determine the best placement of our problem
+onto the physical hardware.
 
 Program Characteristics:
 
