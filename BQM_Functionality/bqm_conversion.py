@@ -15,16 +15,7 @@
 # --------------------------------------------------------------------------#
 
 # This program demonstrates a basic Ocean program that runs an Ising problem 
-# (from a BQM) on the D-Wave QPU. In this example we use Ocean's 
-# `EmbeddingComposite` to determine the best placement of our problem onto the
-# physical hardware.
-
-# Program Characteristics:
-
-# - Model: Ising (from BQM from QUBO)
-# - Sampler: D-Wave QPU with EmbeddingComposite
-
-# This QUBO problem is formulated/developed here: https://docs.dwavesys.com/docs/latest/c_pf_3.html#social-networks-friends-and-enemies
+# (from a BQM) on the D-Wave QPU. 
 
 # -------------------------------------------------------#
 

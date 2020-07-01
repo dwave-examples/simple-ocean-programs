@@ -12,7 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# -------------------------------------------------------#
+# --------------------------------------------------------------------------#
+
+# This program demonstrates a basic Ocean program that creates a
+# BinaryQuadraticModel with a non-zero offset to store a constant term. 
+
+# --------------------------------------------------------------------------#
 
 # First we import the functions and packages that we will use in this program.
 from dwave.system import EmbeddingComposite, DWaveSampler
