@@ -17,7 +17,7 @@
 # This program demonstrates a basic Ocean program that runs an Ising problem 
 # (from a BQM) on the D-Wave QPU. 
 
-# -------------------------------------------------------#
+# --------------------------------------------------------------------------#
 
 # First we import the functions and packages that we will use in this program.
 from dwave.system import EmbeddingComposite, DWaveSampler
