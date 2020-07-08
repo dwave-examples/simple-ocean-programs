@@ -1,30 +1,41 @@
-# This program demonstrates a basic Ocean program that runs a QUBO problem on the D-Wave QPU as a binary quadratic model (BQM). In this example we use Ocean's `EmbeddingComposite` to determine the best placement of our problem onto the physical hardware.
+# Copyright 2020 D-Wave Systems Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
-# Program Characteristics:
+# --------------------------------------------------------------------------#
 
-# - Model: BQM (from QUBO)
-# - Sampler: D-Wave QPU with EmbeddingComposite
+# This program demonstrates a basic Ocean program that runs a QUBO problem on
+# the D-Wave QPU as a binary quadratic model (BQM).
 
-# This QUBO problem is formulated/developed here: https://docs.dwavesys.com/docs/latest/c_pf_3.html#social-networks-friends-and-enemies
+# --------------------------------------------------------------------------#
 
-# -------------------------------------------------------#
-
-# First we import the functions and packages that we will use in this program.
+# Import the functions and packages that are used
 from dwave.system import EmbeddingComposite, DWaveSampler
 from dimod import BinaryQuadraticModel
 
-# Now we can define our problem as a Python dictionary and convert it to a BQM.
+# Define the problem as a Python dictionary and convert it to a BQM
 Q = {('B','B'): 1, 
     ('K','K'): 1, 
     ('A','C'): 2, 
     ('A','K'): -2, 
     ('B','C'): -2}
-    
+
+# Convert the problem to a BQM
 bqm = BinaryQuadraticModel.from_qubo(Q)
 
-# Next we define the sampler that we want to use to run our problem.
+# Define the sampler that will be used to run the problem
 sampler = EmbeddingComposite(DWaveSampler())
 
-# Finally we run our problem and print out the results.
+# Run the problem on the sampler and print the results
 sampleset = sampler.sample(bqm, num_reads = 10)
 print(sampleset)
