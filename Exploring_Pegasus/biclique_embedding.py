@@ -25,8 +25,8 @@ N = int(sys.argv[1])
 nodes1 = np.arange(N)
 nodes2 = [chr(i + ord('a')) for i in range(N)]
 B = nx.Graph()
-B.add_nodes_from(nodes1)
-B.add_nodes_from(nodes2)
+B.add_nodes_from(nodes1, bipartite=0)
+B.add_nodes_from(nodes2, bipartite=1)
 for node1 in nodes1:
     for node2 in nodes2:
         B.add_edge(node1, node2)
