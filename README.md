@@ -18,3 +18,8 @@ In the `BQM_Functionality` folder are programs that demonstrate the
 functionality of the binary quadratic model (BQM) structure within Ocean.
 Using BQMs we can translate seamlessly between QUBO and Ising models, and
 provide offsets for any constants in our models.
+
+## Exploring Pegasus
+
+In the `Exploring_Pegasus` folder are programs which explore the 
+Pegasus topology and the Advantage QPU.
