@@ -14,9 +14,11 @@
 
 from dwave.system.samplers import DWaveSampler
 
-dwave_sampler_pegasus = DWaveSampler(solver={'topology__type__eq': 'pegasus'})
+dwave_sampler_pegasus = DWaveSampler(solver={'topology__type': 'pegasus'})
 props_pegasus = dwave_sampler_pegasus.properties
 print(props_pegasus['num_qubits'])
+num_qubits2 = dwave_sampler_pegasus.solver.num_qubits
+print(num_qubits2)
 print(len(props_pegasus['couplers']))
 print(props_pegasus['h_range'])
 print(props_pegasus['j_range'])

@@ -15,7 +15,7 @@
 import dwave_networkx as dnx
 from dwave.system.samplers import DWaveSampler
 
-dwave_sampler_pegasus = DWaveSampler(solver={'topology__type__eq': 'pegasus'})
+dwave_sampler_pegasus = DWaveSampler(solver={'topology__type': 'pegasus'})
 props_pegasus = dwave_sampler_pegasus.properties
 
 # Get total qubits - should be 24 * N * (N - 1)

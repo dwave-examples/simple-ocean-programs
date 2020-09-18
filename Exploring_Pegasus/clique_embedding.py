@@ -29,18 +29,18 @@ pos = nx.spring_layout(G)
 nx.draw_networkx(G, pos=pos, font_size=10, node_size=100, node_color='cyan', ax=axes[0])
 
 # Embed the graph on Chimera
-dwave_sampler_chimera = DWaveSampler(solver={'topology__type__eq': 'chimera'})
-A_chimera = dwave_sampler_chimera.edgelist
-chimera_graph = dnx.chimera_graph(16, edge_list=A_chimera)
+dwave_sampler_chimera = DWaveSampler(solver={'topology__type': 'chimera'})
+chimera_edges = dwave_sampler_chimera.edgelist
+chimera_graph = dnx.chimera_graph(16, edge_list=chimera_edges)
 clique_embedding_chimera = find_clique_embedding(N, chimera_graph)
 
 # Draw the graph embedded on Chimera
 dnx.draw_chimera_embedding(chimera_graph, clique_embedding_chimera, embedded_graph=G, unused_color=None, ax=axes[1])
 
 # Embed the graph on Pegasus
-dwave_sampler_pegasus = DWaveSampler(solver={'topology__type__eq': 'pegasus'})
-A_pegasus = dwave_sampler_pegasus.edgelist
-pegasus_graph = dnx.pegasus_graph(16, edge_list=A_pegasus)
+dwave_sampler_pegasus = DWaveSampler(solver={'topology__type': 'pegasus'})
+pegasus_edges = dwave_sampler_pegasus.edgelist
+pegasus_graph = dnx.pegasus_graph(16, edge_list=pegasus_edges)
 clique_embedding_pegasus = find_clique_embedding(N, pegasus_graph)
 
 # Draw the graph embedded on Pegasus
