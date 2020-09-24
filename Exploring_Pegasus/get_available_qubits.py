@@ -31,5 +31,8 @@ inactive_pegasus_coord = [dnx.pegasus_coordinates(16).linear_to_pegasus(k) for k
 # With coordinates=True, we only get the fabric qubits
 pegasus_graph = dnx.pegasus_graph(16, coordinates=True)
 active_fabric = [node for node in pegasus_graph.nodes if node not in inactive_pegasus_coord]
-
 print(len(active_fabric))
+
+# another way to compute the number of active qubits
+active_qubits = dwave_sampler_pegasus.solver.num_active_qubits
+print(active_qubits)
