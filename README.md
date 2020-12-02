@@ -23,3 +23,9 @@ provide offsets for any constants in our models.
 
 In the `Exploring_Pegasus` folder are programs which explore the 
 Pegasus topology and the Advantage QPU.
+
+## Pegasus Embedding Video
+
+In the `Pegasus_Embedding_Video` folder are programs that were used in creating
+our YouTube video showcasing the pegasus topology.  The video can be viewed at
+["https://youtu.be/aAhvyxzJyQE"](https://youtu.be/aAhvyxzJyQE).
