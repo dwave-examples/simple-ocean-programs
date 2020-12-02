@@ -14,11 +14,14 @@
 
 import sys
 import numpy as np
-import matplotlib.pyplot as plt
 import networkx as nx
 import dwave_networkx as dnx
 from minorminer import find_embedding
 from dwave.system.samplers import DWaveSampler
+
+import matplotlib
+matplotlib.use("agg")
+import matplotlib.pyplot as plt
 
 # Form the biclique
 N = int(sys.argv[1])
