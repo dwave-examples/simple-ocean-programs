@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import matplotlib
+matplotlib.use("agg")
 from matplotlib import pyplot as plt, colors as mpl_color
 import networkx as nx, dwave_networkx as dnx
 
@@ -38,7 +40,7 @@ def double_plot(S, T, emb, filename, params):
 
     dnx.draw_pegasus_embedding(T, emb, S,
                                crosses = True, 
-                               chain_colors = colors,
+                               chain_color = colors,
                                ax = axes[1],
                                **params[1])
 
