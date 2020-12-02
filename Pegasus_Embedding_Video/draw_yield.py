@@ -13,6 +13,8 @@
 # limitations under the License.
 
 from pegasus_graph import P6
+import matplotlib
+matplotlib.use("agg")
 from matplotlib import pyplot as plt
 import dwave_networkx as dnx
 

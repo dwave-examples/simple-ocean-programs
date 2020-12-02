@@ -14,6 +14,8 @@
 
 from pegasus_graph import P16, P6
 import minorminer.layout as mml, dwave_networkx as dnx, networkx as nx
+import matplotlib
+matplotlib.use("agg")
 from matplotlib import pyplot as plt, colors as mpl_color
 
 if False:
