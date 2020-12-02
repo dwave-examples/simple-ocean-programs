@@ -28,4 +28,4 @@ Pegasus topology and the Advantage QPU.
 
 In the `Pegasus_Embedding_Video` folder are programs that were used in creating
 our YouTube video showcasing the pegasus topology.  The video can be viewed at
-["https://youtu.be/aAhvyxzJyQE"](https://youtu.be/aAhvyxzJyQE).
+[https://youtu.be/aAhvyxzJyQE](https://youtu.be/aAhvyxzJyQE).
