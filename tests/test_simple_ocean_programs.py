@@ -89,5 +89,49 @@ class TestExploringPegasus(unittest.TestCase):
         demo_file = os.path.join(project_dir, 'Exploring_Pegasus/get_props.py')
         subprocess.check_output([sys.executable, demo_file])
 
+class TestPegasusEmbeddingVideo(unittest.TestCase):
+
+    def test_smoke_double_plot(self):
+        """run double_plot.py and check that nothing crashes"""
+
+        demo_file = os.path.join(project_dir, 'Pegasus_Embedding_Video/double_plot.py')
+        subprocess.check_output([sys.executable, demo_file])
+
+    def test_smoke_draw_yield(self):
+        """run draw_yield.py and check that nothing crashes"""
+
+        demo_file = os.path.join(project_dir, 'Pegasus_Embedding_Video/draw_yield.py')
+        subprocess.check_output([sys.executable, demo_file])
+
+    def test_smoke_embed_draw_clique(self):
+        """run embed_draw_clique.py and check that nothing crashes"""
+
+        demo_file = os.path.join(project_dir, 'Pegasus_Embedding_Video/embed_draw_clique.py')
+        subprocess.check_output([sys.executable, demo_file])
+
+    def test_smoke_embed_draw_random(self):
+        """run embed_draw_random.py and check that nothing crashes"""
+
+        demo_file = os.path.join(project_dir, 'Pegasus_Embedding_Video/embed_draw_random.py')
+        subprocess.check_output([sys.executable, demo_file])
+
+    def test_smoke_embed_draw_sparse(self):
+        """run embed_draw_sparse.py and check that nothing crashes"""
+
+        demo_file = os.path.join(project_dir, 'Pegasus_Embedding_Video/embed_draw_sparse.py')
+        subprocess.check_output([sys.executable, demo_file])
+
+    def test_smoke_embed_draw_sparse2(self):
+        """run embed_draw_sparse2.py and check that nothing crashes"""
+
+        demo_file = os.path.join(project_dir, 'Pegasus_Embedding_Video/embed_draw_sparse2.py')
+        subprocess.check_output([sys.executable, demo_file])
+
+    def test_smoke_pegasus_graph(self):
+        """run test_smoke_pegasus_graph.py and check that nothing crashes"""
+
+        demo_file = os.path.join(project_dir, 'Pegasus_Embedding_Video/test_smoke_pegasus_graph.py')
+        subprocess.check_output([sys.executable, demo_file])
+
 if __name__ == '__main__':
     unittest.main()
