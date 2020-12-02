@@ -53,5 +53,41 @@ class TestBasicPrograms(unittest.TestCase):
         demo_file = os.path.join(project_dir, 'Basic_Programs/general_program_qubo.py')
         subprocess.check_output([sys.executable, demo_file])
 
+class TestExploringPegasus(unittest.TestCase):
+
+    def test_smoke_biclique_embedding(self):
+        """run biclique_embedding.py and check that nothing crashes"""
+
+        demo_file = os.path.join(project_dir, 'Exploring_Pegasus/biclique_embedding.py')
+
+        # This test should be made more robust once we have usage information
+        subprocess.check_output([sys.executable, demo_file, "5"])
+
+    def test_smoke_clique_embedding(self):
+        """run clique_embedding.py and check that nothing crashes"""
+
+        demo_file = os.path.join(project_dir, 'Exploring_Pegasus/clique_embedding.py')
+
+        # This test should be made more robust once we have usage information
+        subprocess.check_output([sys.executable, demo_file, "5"])
+
+    def test_smoke_get_available_qubits(self):
+        """run get_available_qubits.py and check that nothing crashes"""
+
+        demo_file = os.path.join(project_dir, 'Exploring_Pegasus/get_available_qubits.py')
+        subprocess.check_output([sys.executable, demo_file])
+
+    def test_smoke_get_inactive_qubits(self):
+        """run get_inactive_qubits.py and check that nothing crashes"""
+
+        demo_file = os.path.join(project_dir, 'Exploring_Pegasus/get_inactive_qubits.py')
+        subprocess.check_output([sys.executable, demo_file])
+
+    def test_smoke_get_props(self):
+        """run get_props.py and check that nothing crashes"""
+
+        demo_file = os.path.join(project_dir, 'Exploring_Pegasus/get_props.py')
+        subprocess.check_output([sys.executable, demo_file])
+
 if __name__ == '__main__':
     unittest.main()
