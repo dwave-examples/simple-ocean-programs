@@ -13,10 +13,15 @@
 # limitations under the License.
 
 from pegasus_graph import P16
-from matplotlib import pyplot as plt
 import networkx as nx, dwave_networkx as dnx
-
 from minorminer import busclique
+
+import matplotlib
+try:
+    import matplotlib.pyplot as plt
+except ImportError:
+    matplotlib.use("agg")
+    import matplotlib.pyplot as plt
 
 clique_cache = busclique.busgraph_cache(P16)
 clique_embedding = clique_cache.largest_clique()
