@@ -13,10 +13,13 @@
 # limitations under the License.
 
 from pegasus_graph import P6
-import matplotlib
-matplotlib.use("agg")
-from matplotlib import pyplot as plt
 import dwave_networkx as dnx
+
+try:
+    import matplotlib.pyplot as plt
+except ImportError:
+    matplotlib.use("agg")
+    import matplotlib.pyplot as plt
 
 dnx.draw_pegasus_yield(P6, node_size = 80)
 

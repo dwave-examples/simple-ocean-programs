@@ -13,10 +13,15 @@
 # limitations under the License.
 
 from pegasus_graph import P6
-import matplotlib
-matplotlib.use("agg")
-from matplotlib import pyplot as plt, colors as mpl_color
 import networkx as nx, dwave_networkx as dnx, minorminer
+
+try:
+    import matplotlib.pyplot as plt
+    import matplotlib.colors as mpl_color
+except ImportError:
+    matplotlib.use("agg")
+    import matplotlib.pyplot as plt
+    import matplotlib.colors as mpl_color
 
 nodes = 80
 edge_probability = 0.1

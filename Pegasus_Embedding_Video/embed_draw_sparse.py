@@ -14,17 +14,22 @@
 
 from pegasus_graph import P16, P6
 import minorminer.layout as mml, dwave_networkx as dnx, networkx as nx
-import matplotlib
-matplotlib.use("agg")
-from matplotlib import pyplot as plt, colors as mpl_color
+
+try:
+    import matplotlib.pyplot as plt
+    import matplotlib.colors as mpl_color
+except ImportError:
+    matplotlib.use("agg")
+    import matplotlib.pyplot as plt
+    import matplotlib.colors as mpl_color
 
 # Draw a small P6 graph
 n = 200
 C = nx.random_regular_graph(3, n)
 
-emb, (layout_C, layout_P) = mml.find_embedding(C, P6, random_seed = 1,
-                                                    return_layouts = True,
-                                                    threads = 3)
+emb, (layout_C, layout_P) = mml.find_embedding(C, P6, random_seed=1,
+                                                    return_layouts=True,
+                                                    threads=3)
 
 plt.figure(figsize=(20, 20))
 
@@ -44,9 +49,15 @@ if False:
     n = 850
     C = nx.random_regular_graph(3, n)
 
-    emb, (layout_C, layout_P) = mml.find_embedding(C, P16, random_seed = 2,
-                                                    return_layouts = True, layout = (None, None),
-                                                    threads = 3, verbose = 2, interactive = True, tries = 30, max_no_improvement = 10000, timeout = 10000000)
+    emb, (layout_C, layout_P) = mml.find_embedding(C, P16, random_seed=2,
+                                                    return_layouts=True, 
+                                                    layout=(None, None),
+                                                    threads=3, 
+                                                    verbose=2, 
+                                                    interactive=True, 
+                                                    tries=30, 
+                                                    max_no_improvement=10000, 
+                                                    timeout=10000000)
 
     plt.figure(figsize=(20, 20))
 
