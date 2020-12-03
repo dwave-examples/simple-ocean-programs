@@ -121,16 +121,10 @@ class TestPegasusEmbeddingVideo(unittest.TestCase):
         demo_file = os.path.join(project_dir, 'Pegasus_Embedding_Video/embed_draw_sparse.py')
         subprocess.check_output([sys.executable, demo_file])
 
-    def test_smoke_embed_draw_sparse2(self):
-        """run embed_draw_sparse2.py and check that nothing crashes"""
-
-        demo_file = os.path.join(project_dir, 'Pegasus_Embedding_Video/embed_draw_sparse2.py')
-        subprocess.check_output([sys.executable, demo_file])
-
     def test_smoke_pegasus_graph(self):
         """run test_smoke_pegasus_graph.py and check that nothing crashes"""
 
-        demo_file = os.path.join(project_dir, 'Pegasus_Embedding_Video/test_smoke_pegasus_graph.py')
+        demo_file = os.path.join(project_dir, 'Pegasus_Embedding_Video/pegasus_graph.py')
         subprocess.check_output([sys.executable, demo_file])
 
 if __name__ == '__main__':
