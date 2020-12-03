@@ -18,6 +18,7 @@ import dwave_networkx as dnx
 from minorminer.busclique import find_clique_embedding
 from dwave.system.samplers import DWaveSampler
 
+import matplotlib
 try:
     import matplotlib.pyplot as plt
 except ImportError:

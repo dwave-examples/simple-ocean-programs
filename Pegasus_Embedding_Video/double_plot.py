@@ -14,6 +14,7 @@
 
 import networkx as nx, dwave_networkx as dnx
 
+import matplotlib
 try:
     import matplotlib.pyplot as plt
     import matplotlib.colors as mpl_color

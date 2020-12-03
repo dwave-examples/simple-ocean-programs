@@ -15,6 +15,7 @@
 from pegasus_graph import P6
 import dwave_networkx as dnx
 
+import matplotlib
 try:
     import matplotlib.pyplot as plt
 except ImportError:

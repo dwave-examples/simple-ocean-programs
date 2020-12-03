@@ -16,6 +16,7 @@ from pegasus_graph import P16
 import networkx as nx, dwave_networkx as dnx
 from minorminer import busclique
 
+import matplotlib
 try:
     import matplotlib.pyplot as plt
 except ImportError:
