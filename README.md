@@ -1,3 +1,7 @@
+[![Linux/Mac/Windows build status](
+  https://circleci.com/gh/dwave-examples/simple-ocean-programs.svg?style=svg)](
+  https://circleci.com/gh/dwave-examples/simple-ocean-programs)
+
 # Simple Ocean Examples
 
 This repository provides examples of introductory Ocean programs and concepts.
