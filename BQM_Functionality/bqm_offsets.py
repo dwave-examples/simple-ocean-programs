@@ -15,7 +15,7 @@
 # --------------------------------------------------------------------------#
 
 # This program demonstrates a basic Ocean program that creates a
-# BinaryQuadraticModel with a non-zero offset to store a constant term. 
+# BinaryQuadraticModel with a non-zero offset to store a constant term.
 
 # --------------------------------------------------------------------------#
 
@@ -24,24 +24,28 @@ from dwave.system import EmbeddingComposite, DWaveSampler
 from dimod import BinaryQuadraticModel
 
 # Define the problem as a Python dictionary and convert it to a BQM
-Q = {('B','B'): 1, 
-    ('K','K'): 1, 
-    ('A','C'): 2, 
-    ('A','K'): -2, 
+Q = {('B','B'): 1,
+    ('K','K'): 1,
+    ('A','C'): 2,
+    ('A','K'): -2,
     ('B','C'): -2}
-    
+
 bqm = BinaryQuadraticModel.from_qubo(Q, offset=1.0)
 
 # Define the sampler that will be used to run the problem
 sampler = EmbeddingComposite(DWaveSampler())
 
 # Run the problem on the sampler and print the results
-sampleset = sampler.sample(bqm, num_reads = 10)
+sampleset = sampler.sample(bqm,
+                           num_reads = 10,
+                           label='Example - Simple Ocean Programs: Offsets')
 print("QUBO samples:")
 print(sampleset)
 
 # Convert the problem to an Ising model and run it on the sampler
 bqm.change_vartype('SPIN')
-sampleset = sampler.sample(bqm, num_reads = 10)
+sampleset = sampler.sample(bqm,
+                           num_reads = 10,
+                           label='Example - Simple Ocean Programs: Offsets')
 print("\nIsing samples:")
 print(sampleset)
