@@ -1,4 +1,4 @@
-## Pegasus Embedding Video Programs
+# Pegasus Embedding Video Programs
 
 These are the resource files used to create the [Pegasus embedding video](https://youtu.be/aAhvyxzJyQE).
 
