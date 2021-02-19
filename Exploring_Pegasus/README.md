@@ -9,12 +9,12 @@ the Pegasus topology, see [our whitepaper](https://dwavesys.com/sites/default/fi
 
 Here we describe each program in this directory. Note that although these
 programs are not running any problems on the QPU, they will require a token
-that has access to an Advantage solver.
+that has access to an Advantage solver since the query the properties of the
+online solvers.
 
 #### `get_props.py`
 
-Prints to the command-line the properties of the online system that uses the
-Pegasus topology.
+Prints the properties of the online system that uses the Pegasus topology.
 
 #### `get_available_qubits.py` 
 
@@ -25,7 +25,7 @@ online Advantage system.
 
 Each time a chip is calibrated, a small number of qubits may not perform within
 our required specifications. These qubits become inactive, and cannot be used
-in your calculations. This program will show details on the inactive qubits in
+in your calculations. This program will show the number of inactive qubits in
 the online Advantage system.
 
 #### `clique_embedding.py`
@@ -34,8 +34,8 @@ Look at how cliques (or complete graphs) can be embedded on the Pegasus
 topology. 
 
 To run this program, type `python clique_embedding.py N`, where N is a positive
-integer, will attempt to embed a clique of size N onto a full P16 (the Pegasus
-topology at the scale of the Advantage chip).
+integer. The program will attempt to embed a clique of size N onto a full P16
+(the Pegasus topology at the scale of the Advantage chip).
 
 For example, running `python clique_embedding.py 10` will produce the image
 shown below.
@@ -48,8 +48,8 @@ Look at how bicliques (or complete bipartite graphs) can be embedded on the
 Pegasus topology.
 
 To run this program, type `python biclique_embedding.py N`, where N is a
-positive integer, will attempt to embed a biclique of size N by N onto a full
-P16 (the Pegasus topology at the scale of the Advantage chip).
+positive integer. The program will attempt to embed a biclique of size N by N
+onto a full P16 (the Pegasus topology at the scale of the Advantage chip).
 
 For example, running `python biclique_embedding.py 15` will produce the image
 shown below.
