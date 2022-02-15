@@ -22,3 +22,4 @@ sampleset = sampler.sample_ising(h, J,
                                  label='Example - Simple Ocean Programs: Ising')
 print(sampleset)
 
+# test alteration
