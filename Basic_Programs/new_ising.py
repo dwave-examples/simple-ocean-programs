@@ -5,6 +5,7 @@ import numpy as np
 import os
 import math as math
 import dimod
+import pandas
 
 #project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 #print(project_dir)
@@ -48,12 +49,19 @@ sampleset = sampler.sample_ising(h, J,
 mat = dimod.as_samples(sampleset)
 mat = mat[0]
 
-params = np.savetxt(open("/workspace/simple-ocean-programs/Basic_Programs/samples_1_1.csv", "w"), mat, delimiter=",")
+df = sampleset.to_pandas_dataframe()
+print(df)
+df.to_csv("/workspace/simple-ocean-programs/Basic_Programs/samples_1_1.csv")
 
-print(sampleset)
-print(mat)
+#en = sampleset.data('energy')
+#en2 = np.array(list(en))
+#nm = sampleset.data('num_oc.')
+#nm2 = np.array(list(nm))
 
+#print(en2)
+#print(nm2)
 
+#params = np.savetxt("/workspace/simple-ocean-programs/Basic_Programs/samples_1_1.csv", mat, delimiter=",")
+#print(sampleset)
+#print(mat)
 
-
-# test alteration
