@@ -53,13 +53,6 @@ df = sampleset.to_pandas_dataframe()
 print(df)
 df.to_csv("/workspace/simple-ocean-programs/Basic_Programs/samples_1_1.csv")
 
-#en = sampleset.data('energy')
-#en2 = np.array(list(en))
-#nm = sampleset.data('num_oc.')
-#nm2 = np.array(list(nm))
-
-#print(en2)
-#print(nm2)
 
 #params = np.savetxt("/workspace/simple-ocean-programs/Basic_Programs/samples_1_1.csv", mat, delimiter=",")
 #print(sampleset)
