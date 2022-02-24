@@ -20,6 +20,7 @@ T = 5
 h = {}
 for i in range(d):
     h[i] = params[i,n]*T/2
+    h[i] = params[i,n]
 gamma = {}
 for i in range(d):
     gamma[i] = T*(math.exp((params[d+i,n]**2)))
@@ -28,7 +29,11 @@ c = 0
 for i in range(d):
     for j in range(i+1,d):
         J[(i,j)] = params[d*2+c,n]*T
+        J[(i,j)] = params[d*2+c,n]*2
         c = c + 1
+
+print(h)
+print(J)
 
 gamma_mu = sum(gamma.values()) / len(gamma)
 gamma_off = gamma
@@ -36,6 +41,7 @@ gamma_off = {key: gamma[key] - gamma_mu
                        for key in gamma.keys()}
 
 print(gamma_mu)
+print(gamma_off)
 ## for gamma_mu = 5.14, use s=0.189	A=5.13821200	B=0.73652400
 s_star = 0.189
 A = 5.13821200
@@ -79,10 +85,11 @@ for i in range(d):
         else:
             offset[embedding[i][j]] = val
 
-sampleset = sampler.sample_ising(h2, J2, num_reads=10,
-                                 anneal_offsets=offset,
-                                 anneal_schedule=anneal_sched)
+#sampleset = sampler.sample_ising(h2, J2, num_reads=10,
+#                                 anneal_offsets=offset,
+#                                 anneal_schedule=anneal_sched)
 
+sampleset = sampler.sample_ising(h, J, num_reads=10)
 
 ## Define the sampler that will be used to run the problem
 #sampler = EmbeddingComposite(DWaveSampler())

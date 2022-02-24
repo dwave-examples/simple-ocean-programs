@@ -43,7 +43,7 @@ sampler = EmbeddingComposite(DWaveSampler())
 
 # Run the problem on the sampler and print the results
 sampleset = sampler.sample_ising(h, J,
-                                 num_reads = 10,
+                                 num_reads = 1000,
                                  label='qbm samples : MNIST')
 
 mat = dimod.as_samples(sampleset)
@@ -51,7 +51,7 @@ mat = mat[0]
 
 df = sampleset.to_pandas_dataframe()
 print(df)
-df.to_csv("/workspace/simple-ocean-programs/Basic_Programs/samples_1_1.csv")
+df.to_csv("/workspace/simple-ocean-programs/Basic_Programs/samples_1_4.csv")
 
 
 #params = np.savetxt("/workspace/simple-ocean-programs/Basic_Programs/samples_1_1.csv", mat, delimiter=",")
