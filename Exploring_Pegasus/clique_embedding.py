@@ -25,7 +25,17 @@ except ImportError:
     matplotlib.use("agg")
     import matplotlib.pyplot as plt
 
-N = int(sys.argv[1])
+args = sys.argv
+if len(args) <= 1:
+    print("\nNo input provided. Please provide an integer.")
+    exit(1)
+
+try:
+    N = int(args[1])
+except:
+    print("\nIncorrect input argument. Please provide an integer.\n")
+    exit(1)
+
 G = nx.complete_graph(N)
 
 fig, axes = plt.subplots(nrows=1, ncols=3, figsize=(12, 6))
