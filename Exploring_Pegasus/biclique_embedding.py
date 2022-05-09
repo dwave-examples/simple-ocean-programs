@@ -27,7 +27,17 @@ except ImportError:
     import matplotlib.pyplot as plt
 
 # Form the biclique
-N = int(sys.argv[1])
+args = sys.argv
+if len(args) <= 1:
+    print("\nNo input provided. Please provide an integer.")
+    exit(1)
+
+try:
+    N = int(args[1])
+except:
+    print("\nIncorrect input argument. Please provide an integer.\n")
+    exit(1)
+
 nodes1 = np.arange(N)
 nodes2 = [chr(i + ord('a')) for i in range(N)]
 B = nx.Graph()
