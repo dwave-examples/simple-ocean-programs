@@ -92,12 +92,12 @@ for i in range(Ny):
 ####
 
 for i in range(Ny):
-    #sampler = DWaveSampler(solver={'topology__type': 'chimera'})
-    sampler = EmbeddingComposite(DWaveSampler())
+    #sampler = DWaveSampler()
+    sampler = EmbeddingComposite(DWaveSampler(solver={'topology__type': 'chimera'}))
 
     sampleset = sampler.sample_ising(hs[i][0], Js[i],
-        	                         num_reads = 10) #,
-                	                 #postprocess='sampling', beta=0.001)
+        	                         num_reads = 10000,
+                	                 postprocess='sampling', beta=0.001)
 
 
     mat = dimod.as_samples(sampleset)
