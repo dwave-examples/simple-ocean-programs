@@ -9,18 +9,19 @@ import pandas
 from minorminer import find_embedding
 
 d = 8
-N = 10
-T = 5
+N = 1 #10
+T = 1 #5
+nMod = 1 #3
 
-for cMod in range(3):
-    for cTrial in range(5):
+for cMod in range(nMod):
+    for cTrial in range(T):
 
+      if cMod==0:
+        fname = "/workspace/simple-ocean-programs/Basic_Programs/params_qboltz_" + str(cTrial+1) + ".csv"
       if cMod==1:
-        fname = "/workspace/simple-ocean-programs/Basic_Programs/params_qboltz_" + str(cTrial) + ".csv"
+        fname = "/workspace/simple-ocean-programs/Basic_Programs/params_hqboltz_" + str(cTrial+1) + ".csv"
       if cMod==2:
-        fname = "/workspace/simple-ocean-programs/Basic_Programs/params_hqboltz_" + str(cTrial) + ".csv"
-      if cMod==3:
-        fname = "/workspace/simple-ocean-programs/Basic_Programs/params_hqboltz_aux_" + str(cTrial) + ".csv"
+        fname = "/workspace/simple-ocean-programs/Basic_Programs/params_hqboltz_aux_" + str(cTrial+1) + ".csv"
 
       params = np.loadtxt(open(fname, "rb"), delimiter=",", skiprows=0)
 
@@ -92,14 +93,14 @@ for cMod in range(3):
                     offset[embedding[i][j]] = val
 
 
-        sampleset = sampler.sample_ising(h, J, num_reads=1000)
+        sampleset = sampler.sample_ising(h, J, num_reads=1000, postprocess='sampling', beta=0.001)
 
         mat = dimod.as_samples(sampleset)
         mat = mat[0]
 
         df = sampleset.to_pandas_dataframe()
         #print(df)
-        fout = "/workspace/simple-ocean-programs/Basic_Programs/samples_qboltz_" + str(cTrial) + "_" + str(n) + ".csv"
+        fout = "/workspace/simple-ocean-programs/Basic_Programs/samples_qboltz_" + str(cTrial+1) + "_" + str(n+1) + ".csv"
         df.to_csv(fout)
 
 
