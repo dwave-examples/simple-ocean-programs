@@ -16,11 +16,11 @@ for cMod in range(3):
     for cTrial in range(5):
 
       if cMod==1:
-        fname = "/workspace/simple-ocean-programs/Basic_Programs/params_qboltz_" + str(cTrial) + ".csv"
+        fname = "/workspace/simple-ocean-programs/qcboltz_genomics/params/params_qboltz_" + str(cTrial) + ".csv"
       if cMod==2:
-        fname = "/workspace/simple-ocean-programs/Basic_Programs/params_hqboltz_" + str(cTrial) + ".csv"
+        fname = "/workspace/simple-ocean-programs/qcboltz_genomics/params/params_hqboltz_" + str(cTrial) + ".csv"
       if cMod==3:
-        fname = "/workspace/simple-ocean-programs/Basic_Programs/params_hqboltz_aux_" + str(cTrial) + ".csv"
+        fname = "/workspace/simple-ocean-programs/qcboltz_genomics/params/params_hqboltz_aux_" + str(cTrial) + ".csv"
 
       params = np.loadtxt(open(fname, "rb"), delimiter=",", skiprows=0)
 
@@ -79,6 +79,6 @@ for cMod in range(3):
 
         df = sampleset.to_pandas_dataframe()
         #print(df)
-        fout = "/workspace/simple-ocean-programs/Basic_Programs/samples_qboltz_" + str(cTrial) + "_" + str(n) + ".csv"
+        fout = "/workspace/simple-ocean-programs/qcboltz_genomics/samples/samples_qboltz_" + str(cTrial) + "_" + str(n) + ".csv"
         df.to_csv(fout)
 
